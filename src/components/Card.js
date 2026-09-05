@@ -8,10 +8,10 @@ const Card = ({ info }) => {
   const { main_img, name, type, id } = info;
   
   return (
-    <div className="col-lg-3 col-md-6 col-12 spacing picture-item">
+    <div className="mb-4 break-inside-avoid">
       <div className="card border-0 work-container work-modern position-relative d-block overflow-hidden rounded">
         <div className="card-body p-0">
-          <img src={main_img} className="img-fluid" alt="" />
+          <img src={main_img} className="block w-full h-auto" alt={name} />
           <div className="overlay-work bg-dark"></div>
           <div className="content">
             <h5 className="mb-0">

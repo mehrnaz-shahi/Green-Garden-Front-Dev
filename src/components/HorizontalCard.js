@@ -5,13 +5,12 @@ import { translateType } from "../featurs/translateType";
 const HorizontalCard = ({info}) => {
     const {main_img, type, id} = info;
   return (
-    <div className="row">
       <div className="col-lg-3 col-md-6 mt-4 pt-2">
         <div className="card team text-center border-0">
           <div className="position-relative">
             <img
               src={main_img}
-              className="img-fluid avatar avatar-ex-large rounded-circle shadow"
+              className="img-fluid avatar avatar-ex-large rounded-circle shadow-lg !border !border-neutral-100"
               alt=""
             />
             {/* detail */}
@@ -33,7 +32,6 @@ const HorizontalCard = ({info}) => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

@@ -111,7 +111,7 @@ const Garden = () => {
         }}
       />
 
-      <section className="section mt-60">
+      <section className="section mt-2">
         <div className="container mt-lg-3">
           <div className="row">
             <GardenScore

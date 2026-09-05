@@ -32,11 +32,12 @@ const SuggestionCards = ({info}) => {
     setCurrentPage(pageIndex);
   };
 
+  const plants = Array.isArray(info) ? info : [];
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentItems = info.slice(startIndex, endIndex);
+  const currentItems = plants.slice(startIndex, endIndex);
 
-  const totalPages = Math.ceil(info.length / itemsPerPage);
+  const totalPages = Math.ceil(plants.length / itemsPerPage);
 
   return (
     <section className="section">
@@ -90,7 +91,7 @@ const SuggestionCards = ({info}) => {
               <li className="page-item">
                 <p
                   onClick={handleClickNext}
-                  className={endIndex >= info.length ? 'page-link disabled':'page-link'}
+                  className={endIndex >= plants.length ? 'page-link disabled':'page-link'}
 
                 >
                   بعدی

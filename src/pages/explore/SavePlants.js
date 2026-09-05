@@ -46,7 +46,7 @@ const SavePlants = () => {
       );
       // console.log(res);
 
-      setData(res);
+      setData(Array.isArray(res) ? res : []);
     };
 
     fetch();

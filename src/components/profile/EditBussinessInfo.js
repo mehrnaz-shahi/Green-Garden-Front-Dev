@@ -84,7 +84,7 @@ const EditBussinessInfo = ({ information }) => {
   };
 
   return (
-    <section className="section mt-60">
+    <section className="section mt-2">
       <div className="container mt-lg-3">
         <div className="row">
           <div className="col-lg-8 col-12">

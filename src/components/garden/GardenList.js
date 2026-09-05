@@ -8,11 +8,20 @@ import garden from "../../assets/images/plants/14.jpg";
 
 const GardenList = ({ info }) => {
   const { name, profile_photo, id, avg_score } = info;
+  const photo =
+    profile_photo &&
+    (profile_photo.startsWith("http") ||
+      profile_photo.startsWith("/") ||
+      profile_photo.startsWith("data:"))
+      ? profile_photo
+      : profile_photo
+        ? `http://127.0.0.1:8000/${profile_photo}`
+        : garden;
   return (
     <tr key={id + avg_score}>
       <td>
         <img
-          src={profile_photo ? `http://127.0.0.1:8000/${profile_photo}` : garden}
+          src={photo}
           alt=""
           style={{
             margin: "0px 12px",

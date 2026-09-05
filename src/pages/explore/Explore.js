@@ -25,7 +25,7 @@ const Explore = () => {
     const fetchData = async () => {
       // get all plants
       const res = await getData("plants/list/");
-      setAllPlants(res);
+      setAllPlants(Array.isArray(res) ? res : []);
 
       // get plants with filter
       try {
@@ -44,7 +44,6 @@ const Explore = () => {
 
     fetchData();
   }, []);
-
 
   return (
     <div>
@@ -112,17 +111,13 @@ const Explore = () => {
               </div>
             </div>
           </div>
-          <div id="grid" className="row">
+          <div className="columns-2 gap-4 lg:columns-4">
             {data.flatMap((item) => {
+              if (!Array.isArray(item)) return [];
               return item.map((element) => {
                 return <Card key={element.id} info={element} />;
               });
             })}
-            {/* <Card key={info.id} info={info} />
-            <Card
-              key={1}
-              info={{ image: aloeVear, name: "aloe", category: "winter" }}
-            /> */}
           </div>
         </div>
       </section>
@@ -137,12 +132,12 @@ const Explore = () => {
               </div>
             </div>
           </div>
-
-          {Array.isArray(allPlants) &&
-            allPlants.map((item) => {
-              return <HorizontalCard key={item.id} info={item} />;
-            })}
-
+          <div className="flex flex-row flex-wrap items-center justify-center gap-4">
+            {Array.isArray(allPlants) &&
+              allPlants.map((item) => {
+                return <HorizontalCard key={item.id} info={item} />;
+              })}
+          </div>
         </div>
       </section>
     </div>

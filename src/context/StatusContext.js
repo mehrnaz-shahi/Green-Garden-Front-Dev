@@ -16,7 +16,7 @@ export const StatusProvider = ({ children }) => {
       setError(res);
     };
     fetch();
-  }, []);
+  }, [cookies["token"]]);
 
   useEffect(() => {
     if (error === 401) {

@@ -82,7 +82,8 @@ const Navbar = () => {
       setStatus("garden_owner");
       const fetch = async () => {
         // Get garden by garden owner token
-        setGardenId((await get_by_token("gardens/get_garden/", cookies["token"])).id);
+        const garden = await get_by_token("gardens/get_garden/", cookies["token"]);
+        if (garden && garden.id) setGardenId(garden.id);
 
     };
     fetch();
