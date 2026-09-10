@@ -1,4 +1,7 @@
+Preview Images of some pages:
 ![Alt text](src/assets/images/suggest.png)
+![Alt text](src/assets/images/explore.png)
+![Alt text](src/assets/images/plantDetail.png)
 
 # Getting Started with Create React App
 
